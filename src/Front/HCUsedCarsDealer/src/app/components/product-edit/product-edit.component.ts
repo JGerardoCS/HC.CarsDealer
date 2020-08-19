@@ -68,12 +68,12 @@ export class ProductEditComponent implements OnInit {
   private initializeForm(): void {
     this.productForm = this.fb.group({
       id: [0, [Validators.required]],
-      model: ['', [Validators.required, Validators.maxLength(50)]],
-      description: ['', [Validators.maxLength(100)]],
-      year: ['', [Validators.min(0), Validators.max(9000)]],
-      brand: ['', [Validators.required, Validators.maxLength(50)]],
-      kilometers: ['', [Validators.required, Validators.min(0), Validators.max(1000000)]],
-      price: ['', [Validators.required, Validators.min(1), Validators.max(10000000)]]
+      model: [, [Validators.required, Validators.maxLength(50)]],
+      description: [, [Validators.maxLength(100)]],
+      year: [, [Validators.min(0), Validators.max(9000)]],
+      brand: [, [Validators.required, Validators.maxLength(50)]],
+      kilometers: [, [Validators.required, Validators.min(0), Validators.max(1000000)]],
+      price: [, [Validators.required, Validators.min(1), Validators.max(10000000)]]
     });
   }
 
@@ -83,12 +83,21 @@ export class ProductEditComponent implements OnInit {
   }
 
   save() {
+    if (!this.productForm.valid) {
+      Object.values(this.productForm.controls)
+          .forEach(control => {
+            control.markAsTouched();
+          });
+
+      return;
+    }
+
     if (this.product.id === 0) {
       this.productsService.createProduct(this.productForm.value)
             .subscribe(response => this.onProductCreated(response));
     } else {
       this.productsService.updateProduct(this.productForm.value)
-            .subscribe(response => this.onProductUpdated());
+            .subscribe(response => this.onProductUpdated(response));
     }
   }
 
@@ -104,7 +113,16 @@ export class ProductEditComponent implements OnInit {
     }
   }
 
-  private onProductUpdated() {
+  private onProductUpdated(response: ResponseModel<any>) {
+    if (response.isSuccess) {
+      this.appMessagesService.showSuccess('Success', 'Product updated').then(result => {
+        this.initializeForm();
+        response.data = this.product;
+        this.onProductReceived(response);
+      });
+    } else {
+      this.appMessagesService.showError('Error', response.message);
+    }
   }
 
   cancel() {
