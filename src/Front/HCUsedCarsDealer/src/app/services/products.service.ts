@@ -35,10 +35,10 @@ export class ProductsService {
     return this.http.get<ResponseModel<ProductModel>>(url);
   }
 
-  updateProduct(product: ProductModel): Observable<any> {
+  updateProduct(product: ProductModel): Observable<ResponseModel<any>> {
     const url = `${environment.productsBaseUrl}/products`;
 
-    return this.http.put(url, product);
+    return this.http.put<ResponseModel<any>>(url, product);
   }
 
   deleteProduct(productId: number): Observable<ResponseModel<any>> {
