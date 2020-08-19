@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30204.135
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HC.CarsDealer.Domain.Entities", "HC.CarsDealer.Domain.Entities\HC.CarsDealer.Domain.Entities.csproj", "{7EC00E07-FEBA-4691-85EC-AA4FC9720AB2}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HC.CarsDealer.Domain.Interfaces", "HC.CarsDealer.Domain.Interfaces\HC.CarsDealer.Domain.Interfaces.csproj", "{A27802FC-35F5-4006-A32A-C1FBCCF2C5C6}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HC.CarsDealer.Persistence.LocalDb", "HC.CarsDealer.Persistence.LocalDb\HC.CarsDealer.Persistence.LocalDb.csproj", "{0272D140-6D14-4723-8741-EB455ECA7657}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HC.CarsDealer.Application", "HC.CarsDealer.Application\HC.CarsDealer.Application.csproj", "{CC730A3C-5FF3-4B6B-8F00-B85E47CCEDAA}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HC.CarsDealer.Presentation.WebApi", "HC.CarsDealer.Presentation.WebApi\HC.CarsDealer.Presentation.WebApi.csproj", "{479EA668-128A-45F2-9568-38A4F2256AE7}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HC.CarsDealer.Persistence.LocalDb.Tests", "HC.CarsDealer.Persistence.LocalDb.Tests\HC.CarsDealer.Persistence.LocalDb.Tests.csproj", "{D21EA79F-7E95-4918-B030-87C5AE7D8547}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7EC00E07-FEBA-4691-85EC-AA4FC9720AB2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7EC00E07-FEBA-4691-85EC-AA4FC9720AB2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7EC00E07-FEBA-4691-85EC-AA4FC9720AB2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7EC00E07-FEBA-4691-85EC-AA4FC9720AB2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A27802FC-35F5-4006-A32A-C1FBCCF2C5C6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A27802FC-35F5-4006-A32A-C1FBCCF2C5C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A27802FC-35F5-4006-A32A-C1FBCCF2C5C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A27802FC-35F5-4006-A32A-C1FBCCF2C5C6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0272D140-6D14-4723-8741-EB455ECA7657}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0272D140-6D14-4723-8741-EB455ECA7657}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0272D140-6D14-4723-8741-EB455ECA7657}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0272D140-6D14-4723-8741-EB455ECA7657}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CC730A3C-5FF3-4B6B-8F00-B85E47CCEDAA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CC730A3C-5FF3-4B6B-8F00-B85E47CCEDAA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CC730A3C-5FF3-4B6B-8F00-B85E47CCEDAA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CC730A3C-5FF3-4B6B-8F00-B85E47CCEDAA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{479EA668-128A-45F2-9568-38A4F2256AE7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{479EA668-128A-45F2-9568-38A4F2256AE7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{479EA668-128A-45F2-9568-38A4F2256AE7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{479EA668-128A-45F2-9568-38A4F2256AE7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D21EA79F-7E95-4918-B030-87C5AE7D8547}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D21EA79F-7E95-4918-B030-87C5AE7D8547}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D21EA79F-7E95-4918-B030-87C5AE7D8547}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D21EA79F-7E95-4918-B030-87C5AE7D8547}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {299B213A-7D43-46BE-9905-17C443FBA186}
+	EndGlobalSection
+EndGlobal

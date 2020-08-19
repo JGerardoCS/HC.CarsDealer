@@ -1,0 +1,107 @@
+<div class="card mt-5">
+    <div class="card-header">
+        <span *ngIf="!isUpdate">Add New Product</span>
+        <span *ngIf="isUpdate">Update Product</span>
+    </div>
+    <div class="card-body">
+        <form novalidate
+              (ngSubmit)="save()"
+              [formGroup]="productForm">
+
+            <div class="form-group row mb-2">
+                <label for="brand" class="col-md-2 col-form-label">Brand<span class="text-danger">*</span></label>
+                <div class="col-md-8">
+                    <input id="brand" type="text"
+                           class="form-control"
+                           placeholder="Brand"
+                           formControlName="brand"
+                           [ngClass]="{'is-invalid': isInvalidBrand}">
+                    <span class="text-danger error"
+                          *ngIf="isInvalidBrand">{{ getErrorMessage('brand') }}</span>
+                </div>
+            </div>
+
+            <div class="form-group row mb-2">
+                <label for="model" class="col-md-2 col-form-label">Model<span class="text-danger">*</span></label>
+                <div class="col-md-8">
+                    <input id="model" type="text"
+                           class="form-control"
+                           placeholder="Model"
+                           formControlName="model"
+                           [ngClass]="{'is-invalid': isInvalidModel}">
+                    <span class="text-danger error"
+                           *ngIf="isInvalidModel">{{ getErrorMessage('model') }}</span>
+                </div>
+            </div>
+
+            <div class="form-group row mb-2">
+                <label for="year" class="col-md-2 col-form-label">Year</label>
+                <div class="col-md-8">
+                    <input id="year" type="number"
+                           class="form-control"
+                           placeholder="Year"
+                           formControlName="year"
+                           [ngClass]="{'is-invalid': isInvalidYear}">
+                    <span class="text-danger error"
+                           *ngIf="isInvalidYear">{{ getErrorMessage('year') }}</span>
+                </div>
+            </div>
+
+            <div class="form-group row mb-2">
+                <label for="kilometers" class="col-md-2 col-form-label">Kilometers<span class="text-danger">*</span></label>
+                <div class="col-md-8">
+                    <input id="kilometers" type="number"
+                           class="form-control"
+                           placeholder="Kilometers"
+                           formControlName="kilometers"
+                           [ngClass]="{'is-invalid': isInvalidKilometers}">
+                    <span class="text-danger error"
+                           *ngIf="isInvalidKilometers">{{ getErrorMessage('kilometers') }}</span>
+                </div>
+            </div>
+
+            <div class="form-group row mb-2">
+                <label for="price" class="col-md-2 col-form-label">Price<span class="text-danger">*</span></label>
+                <div class="col-md-8">
+                    <input id="price" type="number"
+                           class="form-control"
+                           placeholder="Price"
+                           formControlName="price"
+                           [ngClass]="{'is-invalid': isInvalidPrice}">
+                    <span class="text-danger error"
+                           *ngIf="isInvalidPrice">{{ getErrorMessage('price') }}</span>
+                </div>
+            </div>
+
+            <div class="form-group row mb-2">
+                <label for="description" class="col-md-2 col-form-label">Description</label>
+                <div class="col-md-8">
+                    <textarea id="description" type="text"
+                              class="form-control"
+                              placeholder="Description"
+                              rows="3"
+                              formControlName="description"
+                              [ngClass]="{'is-invalid': isInvalidDescription}">
+                    </textarea>
+                    <span class="text-danger error"
+                          *ngIf="isInvalidDescription">{{ getErrorMessage('description') }}</span>
+                </div>
+            </div>
+
+            <div class="form-group row mb-2 text-center">
+                <div class="offset-md-2 col-md-4">
+                    <button class="btn btn-primary mr-2"
+                            type="submit">
+                        <i class="fa fa-save"></i> Save
+                    </button>
+                    <button class="btn btn-secondary"
+                            type="button"
+                            (click)="cancel()">
+                        <i class="fa fa-undo"></i> Cancel
+                    </button>
+                </div>
+            </div>
+
+        </form>
+    </div>
+</div>

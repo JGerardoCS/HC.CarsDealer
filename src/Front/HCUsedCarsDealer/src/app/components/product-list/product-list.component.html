@@ -1,0 +1,46 @@
+<div class="row mt-5">
+    <div class="col text-right">
+        <button type="button" 
+                class="btn btn-primary"
+                routerLink="/products/0/edit">
+            <i class="fa fa-plus-circle"></i> Add
+        </button>
+    </div>
+</div>
+<div class="row mt-3">
+    <div class="col">
+        <table class="table">
+            <thead class="thead-dark">
+              <tr>
+                <th>ID</th>
+                <th>Brand</th>
+                <th>Model</th>
+                <th>Year</th>
+                <th>Kilometers</th>
+                <th>Price</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let product of products; let i = index">
+                <td>{{ product.id }}</td>
+                <td>{{ product.brand }}</td>
+                <td>{{ product.model }}</td>
+                <td>{{ product.year }}</td>
+                <td>{{ product.kilometers }}</td>
+                <td>{{ product.price | currency }}</td>
+                <td class="text-center">
+                    <button class="btn btn-outline-info mr-2"
+                            [routerLink]="['/products', product.id, 'edit']">
+                        <i class="fa fa-pencil"></i> Edit
+                    </button>
+                    <button class="btn btn-outline-danger"
+                            (click)="deleteProduct( product.id, i )">
+                        <i class="fa fa-trash"></i> Delete
+                    </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+    </div>
+</div>
